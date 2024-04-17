@@ -13,7 +13,7 @@
 
 ##### 基础命令：
 
-在可执行文件所在的目录下运行终端，执行命令：`$ kwr file.txt old_name new_name` 程序会在同级目录下生成文件 `new_novel.txt` ，这就是替换关键词之后的文件
+在可执行文件所在的目录下运行终端，执行命令：`$ kwr file.txt old_name new_name` 程序会在同级目录下生成文件 `new_file.txt` ，这就是替换关键词之后的文件
 
 ##### 进阶命令：
 
