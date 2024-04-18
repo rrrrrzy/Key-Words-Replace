@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 )
@@ -16,10 +15,5 @@ func param_model() {
 		log.Fatal("open file err: " + err.Error())
 	}
 
-	stat, err := file.Stat()
-	if err != nil {
-		fmt.Print("get file status err: " + err.Error())
-	}
-
-	kwr_core(file, stat.Size(), os.Args[2], os.Args[3])
+	kwr_core(file, os.Args[2], os.Args[3])
 }
