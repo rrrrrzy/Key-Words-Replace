@@ -18,6 +18,7 @@ func kwr_core(file *os.File, old_name, new_name string) {
 	if err != nil {
 		panic("read file fail!" + err.Error())
 	}
+	file.Close()
 
 	s_content := string(content)
 	new_content := strings.ReplaceAll(s_content, old_name, new_name)
@@ -27,7 +28,7 @@ func kwr_core(file *os.File, old_name, new_name string) {
 		panic("create file error: " + err.Error())
 	}
 	new_file.Write(new_b)
+	new_file.Close()
 
-	fmt.Printf("Success! New file has been created in name \"new_%s\" .", status.Name())
-	// os.Exit(0)
+	fmt.Printf("Success! New file has been created in name \"new_%s\" .\n", status.Name())
 }

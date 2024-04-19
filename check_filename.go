@@ -12,7 +12,7 @@ func check_filename(filename string) (bool, error) {
 	}
 	ok := re.MatchString(filename)
 	if !ok {
-		return false, fmt.Errorf("wrong type of filename! It should be like 'filename.txt'")
+		return false, fmt.Errorf("wrong type of filename! It should be like 'filename.txt', but your input is '%s'", filename)
 	}
 	return true, nil
 }
