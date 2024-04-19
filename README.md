@@ -7,7 +7,9 @@
 
 ### 使用语言及其版本
 
-为了方便调用，需要采用一款编译型语言，考虑到 C 系列语言对中文糟糕的支持性，选择 Go 语言进行开发，开发版本为：`go version go1.22.1 darwin/arm64` 
+`go version go1.22.1 darwin/arm64`  
+
+郑重声明：本人不对任何版本差异性问题负责，请与 GO 官方反馈
 
 ### 使用方法
 
@@ -24,7 +26,13 @@
 0. 预计实现文件批量处理，完成对上述手动操作过程的效率碾压～～
 1. 预计实现对所有文本类型的支持（着急的可以自己修改一下源码）但不会包括 `.docx .xlsx .pptx` 等格式
 
+### 分支说明
+
+Branch of `main` controls stable version, which will be updated when a new but stable feature is created.
+
+Branch of `develop` controls develop version, which will be updated as any new line is written. 
+
 ### 编译说明
 
-如需自行编译，请使用 `go1.22.1` 版本的编译器进行编译，其他版本不保证可运行性，具体编译方法自行寻找
+如需自行编译，请使用 `go1.22.1` 版本的编译器进行编译，建议编译 `main` 分支，`develop` 分支不保证可运行性
 本程序暂时没有引入内核相关库
