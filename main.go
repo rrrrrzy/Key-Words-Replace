@@ -1,13 +1,15 @@
 package main
 
 import (
+	. "kwr/kwr_module"
 	"os"
-	// "strings"
 )
+
+// "strings"
 
 func main() {
 	if len(os.Args) <= 1 {
-		cmd_line_model()
+		Cmd_line_model()
 		return
 	}
 	if len(os.Args) == 3 {
@@ -16,6 +18,6 @@ func main() {
 	if len(os.Args) != 4 {
 		panic("Wrong PARAM Number!\nIt should be '$ kwr file.txt old_content new_content' ")
 	}
-	param_model()
+	Param_model()
 
 }
