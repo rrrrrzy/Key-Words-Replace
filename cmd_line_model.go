@@ -8,9 +8,9 @@ import (
 
 func cmd_line_model() {
 	var filename, old_content, new_content string
-	fmt.Println("欢迎使用 KWR, 请按照提示输入内容：")
+	fmt.Println("Welcome to use KWR, pls input as notice below")
 
-	fmt.Printf("请输入要需要替换的文件完整名称\n例如：您可以输入 example.txt \n>>> ")
+	fmt.Printf("Pls input the filename where to replace the words\ne.g you can input example.txt \n>>> ")
 	fmt.Scanf("%s", &filename)
 	// fmt.Print(filename)
 	ok, err := check_filename(filename)
@@ -22,13 +22,13 @@ func cmd_line_model() {
 		panic("open file err: " + err.Error())
 	}
 
-	fmt.Print("请输入需要替换的关键词\n例如：您可以输入 old_name\n>>> ")
+	fmt.Print("Pls input the old_name(will be replaced)\n>>> ")
 	fmt.Scanf("%s\n", &old_content)
 
-	fmt.Print("请输入期望的关键词\n例如：您可以输入 new_name\n>>> ")
+	fmt.Print("Pls input the expect word to replace former\nTips: if you just want to delete the former word, press ENTER directly! \n>>> ")
 	fmt.Scanf("%s\n", &new_content)
 	if new_content == "" {
-		fmt.Printf("注意：即将从 '%s' 中删去关键词 '%s'，是否确认[y/n]\n>>> ", filename, old_content)
+		fmt.Printf("ATTENTION：we'll delete '%s' from '%s'，are you sure that[y/n]\n>>> ", old_content, filename)
 		var sure string
 		fmt.Scanf("%s", &sure)
 		fmt.Print(sure)
@@ -37,7 +37,7 @@ func cmd_line_model() {
 			os.Exit(0)
 		}
 	}
-	fmt.Println("正在调用服务...")
+	fmt.Println("wait pls ...")
 
 	kwr_core(file, old_content, new_content)
 }
